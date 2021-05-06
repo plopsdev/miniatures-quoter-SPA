@@ -1,11 +1,25 @@
 <nav>
-    <div>
-        <ul>
-            <li><a routerLink="client" >Home</a></li>
-            <li><a routerLink="client/about" >About</a></li>
-            <li><a routerLink="client/gallery" >Gallery</a></li>
-
-        </ul>
+    <div *ngIf='isAdmin === false'>
+        <div>
+            <ul>
+                <li><a routerLink="client" >Home</a></li>
+                <li><a routerLink="client/about" >About</a></li>
+                <li><a routerLink="client/gallery" >Gallery</a></li>
+            </ul>
+        </div>
+        <div>
+            <button (click)="onSwitch()">Admin</button>
+        </div>
+    </div>
+    <div *ngIf='isAdmin === true'>
+        <div>
+            <ul>
+                <li><a routerLink="quotes-manager" >Quotes manager</a></li>
+            </ul>
+        </div>
+        <div>
+            <button (click)="onSwitch()">Client</button>
+        </div>
     </div>
 </nav>
 

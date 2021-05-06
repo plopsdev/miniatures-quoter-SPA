@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GalleryViewComponent } from './gallery-view.component';
+import { QuoteRowComponent } from './quote-row.component';
 
-describe('GalleryViewComponent', () => {
-  let component: GalleryViewComponent;
-  let fixture: ComponentFixture<GalleryViewComponent>;
+describe('QuoteRowComponent', () => {
+  let component: QuoteRowComponent;
+  let fixture: ComponentFixture<QuoteRowComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GalleryViewComponent ]
+      declarations: [ QuoteRowComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GalleryViewComponent);
+    fixture = TestBed.createComponent(QuoteRowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

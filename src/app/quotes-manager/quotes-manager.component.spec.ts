@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConfirmationViewComponent } from './confirmation-view.component';
+import { QuotesManagerComponent } from './quotes-manager.component';
 
-describe('ConfirmationViewComponent', () => {
-  let component: ConfirmationViewComponent;
-  let fixture: ComponentFixture<ConfirmationViewComponent>;
+describe('QuotesManagerComponent', () => {
+  let component: QuotesManagerComponent;
+  let fixture: ComponentFixture<QuotesManagerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConfirmationViewComponent ]
+      declarations: [ QuotesManagerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ConfirmationViewComponent);
+    fixture = TestBed.createComponent(QuotesManagerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
