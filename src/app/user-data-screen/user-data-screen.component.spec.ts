@@ -1,21 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QuotesManagerComponent } from './quotes-manager.component';
+import { UserDataScreenComponent } from './user-data-screen.component';
 
-
-describe('QuotesManagerComponent', () => {
-  let component: QuotesManagerComponent;
-  let fixture: ComponentFixture<QuotesManagerComponent>;
+describe('UserDataScreenComponent', () => {
+  let component: UserDataScreenComponent;
+  let fixture: ComponentFixture<UserDataScreenComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QuotesManagerComponent ]
+      declarations: [ UserDataScreenComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(QuotesManagerComponent);
+    fixture = TestBed.createComponent(UserDataScreenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

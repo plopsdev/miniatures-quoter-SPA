@@ -1,0 +1,49 @@
+$pink: #FF7B9C;
+$dark_pink: #CC637D;
+$white: #FFFF;
+$font: #12424A;
+$off_white: #E8E9ED;
+
+$button_duration: 0.3s;
+
+.container{
+  display:grid;
+  grid-template-columns: 30% 20% 20% 30%;
+  margin: 8px;
+  padding: 8px;
+  justify-items: center;
+  align-items: center;
+  span{
+    &.name{
+      justify-self: start;
+    }
+  }
+  div.buttons{
+    justify-self: end;
+    button{
+      border-radius: 6px;
+      width: 100px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      transition-duration: $button_duration;
+      cursor: pointer;
+      &.dark-button{
+        background-color: $pink;
+        border: 2px solid $pink;
+        margin-right: 16px;
+        color: $white;
+        &:hover{
+          background-color: $dark_pink;
+          border: 2px solid $dark_pink;
+        }
+      }
+      &.light-button{
+        background-color: $white;
+        border: 2px solid $pink;
+        &:hover{
+          border: 2px solid $dark_pink;
+        }
+      }
+    }
+  }
+}

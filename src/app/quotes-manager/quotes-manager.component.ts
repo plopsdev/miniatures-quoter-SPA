@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RestService, User, Quote } from '../services/rest.service';
+import { RestService, State, Quote } from '../services/rest.service';
+
 
 @Component({
   selector: 'app-quotes-manager',
@@ -10,11 +11,13 @@ import { RestService, User, Quote } from '../services/rest.service';
 export class QuotesManagerComponent implements OnInit {
 
   quotes: Quote[] = []
+  quotesByState: Quote[] = []
 
   constructor( public rest:RestService ) { }
 
   ngOnInit(): void {
     this.getQuotes()
+    
   }
 
   getQuotes(){
@@ -22,9 +25,19 @@ export class QuotesManagerComponent implements OnInit {
       (response) => {
         
         this.quotes = response
-        console.log(this.quotes)
+        this.getQuotesByState(1)
       }
     )
+  }
+
+  getQuotesByState(state_id){
+    this.quotesByState = []
+    for (let quote of this.quotes ){
+      // console.log(quote.state.id)
+      if (quote.state.id == state_id){
+        this.quotesByState.push(quote)
+      }
+    }
   }
 
 }

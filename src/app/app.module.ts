@@ -2,11 +2,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'; //import du module pour l'api
-
+import { FormsModule } from '@angular/forms' //pour gérer les formulaires
+ 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuotesManagerComponent } from './quotes-manager/quotes-manager.component';
 import { QuoteRowComponent } from './quote-row/quote-row.component';
+import { AskAQuoteComponent } from './ask-a-quote/ask-a-quote.component';
+import { ConfirmationScreenComponent } from './confirmation-screen/confirmation-screen.component';
+import { UserDataScreenComponent } from './user-data-screen/user-data-screen.component';
+import { QuoteService } from './services/quote.service';
 // import { QuoteDetailsViewComponent } from './pages/admin/quote-details-view/quote-details-view.component';
 // import { QuotesManagerViewComponent } from './pages/admin/quotes-manager-view/quotes-manager-view.component';
 // import { AboutViewComponent } from './pages/client/about-view/about-view.component';
@@ -22,6 +27,9 @@ import { QuoteRowComponent } from './quote-row/quote-row.component';
 
 const appRoutes: Routes = [
     { path: 'quotes-manager', component: QuotesManagerComponent },
+    { path: 'user-data', component: UserDataScreenComponent },
+    { path: 'ask-a-quote', component: AskAQuoteComponent },
+    { path: 'confirmation', component: ConfirmationScreenComponent }
     // { path: 'admin/quote-details/:id', component: QuoteDetailsViewComponent },
 
     // { path: 'client', component: HomeViewComponent },
@@ -37,18 +45,23 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     QuotesManagerComponent,
-    QuoteRowComponent
+    QuoteRowComponent,
+    AskAQuoteComponent,
+    ConfirmationScreenComponent,
+    UserDataScreenComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   exports: [
   ],
   providers: [
-      AppComponent
+      AppComponent,
+      QuoteService
   ],
   bootstrap: [AppComponent]
 })

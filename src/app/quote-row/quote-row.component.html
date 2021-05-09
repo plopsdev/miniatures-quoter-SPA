@@ -1,1 +1,30 @@
-<p>quote-row works!</p>
+<!--
+  quote.state.id:
+    {
+      1 : En attente,
+      2 : Terminés,
+      3 : Acceptés,
+      4 : Refusés
+    }
+-->
+
+<div class="container" >
+  <span class="name">{{ quote.name }}</span>
+  <span class="date">{{ quote.createdAt | date: 'longDate'}}</span>
+  <span class="price">300€</span>
+  <div class="buttons" *ngIf='quote.state.id === 1'>
+    <button class="dark-button" (click)="updateQuote(3)" >Accepter</button>
+    <button class="light-button" (click)="updateQuote(4)">Refuser</button>
+  </div>
+  <div class="buttons" *ngIf='quote.state.id === 2'> 
+    <button class="dark-button">Supprimer</button>
+  </div>
+  <div class="buttons" *ngIf='quote.state.id === 3'> 
+    <button class="dark-button">Terminer</button>
+    <button class="light-button">Annuler</button>
+  </div>
+  <div class="buttons" *ngIf='quote.state.id === 4'> 
+    <button class="dark-button">Supprimer</button>
+  </div>
+</div>
+

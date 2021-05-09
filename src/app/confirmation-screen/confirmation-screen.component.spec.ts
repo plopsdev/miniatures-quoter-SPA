@@ -1,21 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QuotesManagerComponent } from './quotes-manager.component';
+import { ConfirmationScreenComponent } from './confirmation-screen.component';
 
-
-describe('QuotesManagerComponent', () => {
-  let component: QuotesManagerComponent;
-  let fixture: ComponentFixture<QuotesManagerComponent>;
+describe('ConfirmationScreenComponent', () => {
+  let component: ConfirmationScreenComponent;
+  let fixture: ComponentFixture<ConfirmationScreenComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QuotesManagerComponent ]
+      declarations: [ ConfirmationScreenComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(QuotesManagerComponent);
+    fixture = TestBed.createComponent(ConfirmationScreenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

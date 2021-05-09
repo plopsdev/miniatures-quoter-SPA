@@ -1,21 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QuotesManagerComponent } from './quotes-manager.component';
+import { AskAQuoteComponent } from './ask-a-quote.component';
 
-
-describe('QuotesManagerComponent', () => {
-  let component: QuotesManagerComponent;
-  let fixture: ComponentFixture<QuotesManagerComponent>;
+describe('AskAQuoteComponent', () => {
+  let component: AskAQuoteComponent;
+  let fixture: ComponentFixture<AskAQuoteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QuotesManagerComponent ]
+      declarations: [ AskAQuoteComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(QuotesManagerComponent);
+    fixture = TestBed.createComponent(AskAQuoteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
