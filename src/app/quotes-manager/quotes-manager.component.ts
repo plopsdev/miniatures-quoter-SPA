@@ -10,22 +10,22 @@ import { RestService, State, Quote } from '../services/rest.service';
 })
 export class QuotesManagerComponent implements OnInit {
 
-  quotes: Quote[] = []
-  quotesByState: Quote[] = []
+  quotes: Quote[] = [];
+  quotesByState: Quote[] = [];
+  currentState: number;
 
   constructor( public rest:RestService ) { }
 
   ngOnInit(): void {
     this.getQuotes()
-    
+    this.setCurrentState(1)
   }
 
   getQuotes(){
     this.rest.getQuotes().subscribe(
       (response) => {
-        
         this.quotes = response
-        this.getQuotesByState(1)
+        // this.getQuotesByState(1)
       }
     )
   }
@@ -33,11 +33,20 @@ export class QuotesManagerComponent implements OnInit {
   getQuotesByState(state_id){
     this.quotesByState = []
     for (let quote of this.quotes ){
-      // console.log(quote.state.id)
+      // console.log(quote)
       if (quote.state.id == state_id){
         this.quotesByState.push(quote)
       }
     }
+  }
+
+  setCurrentState(state_id){
+    this.currentState=state_id;
+    console.log(this.currentState)
+  }
+
+  deleteQuote(id){
+    this.quotes.filter(quote => quote.id !== id)
   }
 
 }

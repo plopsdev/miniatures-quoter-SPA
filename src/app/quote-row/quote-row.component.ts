@@ -19,8 +19,22 @@ export class QuoteRowComponent implements OnInit {
 
   updateQuote(new_state_id) {
     this.quote.state.id = new_state_id
-    this.rest.updateQuote(this.quote)
+    this.rest.updateQuote(this.quote).subscribe(
+      (response) => {
+        console.log("updated")
+      }
+    )
     console.log(this.quote.state.id)
+  }
+
+  deleteQuote() {
+    //a améliorer pour retirer directemnt de la liste quand on a supprimé
+  
+    this.rest.deleteQuote(this.quote.id).subscribe(
+      (response) => {
+        console.log("removed")
+      }
+    )
   }
 
 }

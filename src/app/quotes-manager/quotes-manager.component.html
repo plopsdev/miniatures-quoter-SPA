@@ -1,7 +1,7 @@
 <h1>Gestion des devis</h1>
 
 <div>
-  <select (change)="getQuotesByState($event.target.value)">
+  <select (change)="setCurrentState($event.target.value)">
     <option value=1>En attente</option> <!-- Modifier le backend pour ajouter une requête qui récupère les différents états -->
     <option value=2>Terminés</option>
     <option value=3>Acceptés</option>
@@ -10,5 +10,7 @@
 </div>  <!-- dropdown pour choisir quel type de tri -->
 
 <ul>
-  <app-quote-row *ngFor="let quote of quotesByState"  [quote]="quote"></app-quote-row>
+  <div *ngFor="let quote of quotes"> <!-- y a surement une meilleure facon de le faire-->
+    <app-quote-row *ngIf="quote.state.id == this.currentState" [quote]="quote"></app-quote-row>
+  </div>
 </ul>

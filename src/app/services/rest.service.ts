@@ -53,12 +53,15 @@ export class RestService {
     return this.http.get<Quote>(endpoint)
   }
 
-  updateQuote(quote): Observable<any>{
-    console.log(endpoint + quote.id)
-    return this.http.put<Quote>(endpoint + quote.id, quote)
+  updateQuote(quote): Observable<Quote>{
+    return this.http.put<Quote>(endpoint + quote.id, {new_state_id: quote.state.id})
   }
 
   addQuote(quote: QuoteFull): Observable<any>{
     return this.http.post(endpoint, quote)
+  }
+
+  deleteQuote(id): Observable<any> {
+    return this.http.delete<Quote>(endpoint + id)
   }
 }
