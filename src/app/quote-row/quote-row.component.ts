@@ -11,7 +11,7 @@ export class QuoteRowComponent implements OnInit {
 
   @Input() quote: Quote;
 
-  constructor(public rest:RestService) { }
+  constructor(public rest:RestService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -37,4 +37,7 @@ export class QuoteRowComponent implements OnInit {
     )
   }
 
+  getQuoteDetails() {
+    this.router.navigate(['/quotes-manager', this.quote.id ])
+  }
 }

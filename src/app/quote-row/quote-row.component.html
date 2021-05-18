@@ -8,23 +8,17 @@
     }
 -->
 
-<div class="container" >
+<div class="container" (click)="getQuoteDetails()">
   <span class="name">{{ quote.name }}</span>
   <span class="date">{{ quote.createdAt | date: 'longDate'}}</span>
   <span class="price">300€</span>
-  <div class="buttons" *ngIf='quote.state.id === 1'>
-    <button class="dark-button" (click)="updateQuote(3)">Accepter</button>
-    <button class="light-button" (click)="updateQuote(4)">Refuser</button>
-  </div>
-  <div class="buttons" *ngIf='quote.state.id === 2'> 
-    <button class="dark-button" (click)="hello()">Supprimer</button>
-  </div>
-  <div class="buttons" *ngIf='quote.state.id === 3'> 
-    <button class="dark-button" (click)="updateQuote(2)">Terminer</button>
-    <button class="light-button" (click)="updateQuote(4)">Annuler</button>
-  </div>
-  <div class="buttons" *ngIf='quote.state.id === 4'> 
-    <button class="dark-button" (click)="deleteQuote()">Supprimer</button>
+  <div class="buttons" > 
+    <button class="dark-button" *ngIf='quote.state.id === 1' (click)="updateQuote(3)">Accepter</button>
+    <button class="light-button" *ngIf='quote.state.id === 1' (click)="updateQuote(4)">Refuser</button>
+    <button class="dark-button" *ngIf='quote.state.id === 2' (click)="deleteQuote()">Supprimer</button>
+    <button class="dark-button" *ngIf='quote.state.id === 3' (click)="updateQuote(2)">Terminer</button>
+    <button class="light-button" *ngIf='quote.state.id === 3' (click)="updateQuote(4)">Annuler</button>
+    <button class="dark-button" *ngIf='quote.state.id === 4' (click)="deleteQuote()">Supprimer</button>
   </div>
 </div>
 

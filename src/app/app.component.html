@@ -1,26 +1,22 @@
 <nav>
-    <div *ngIf='isAdmin === false'>
-        <div>
-            <ul>
-                <li><a routerLink="client" >Home</a></li>
-                <li><a routerLink="client/about" >About</a></li>
-                <li><a routerLink="client/gallery" >Gallery</a></li>
-                <li><a routerLink="user-data" >Demander un devis</a></li>
-            </ul>
-        </div>
-        <div>
-            <button (click)="onSwitch()">Admin</button>
-        </div>
+    <div class="page-links" *ngIf='isAdmin === false'> 
+      <ul>    
+          <li><a routerLink="client" >Accueil</a></li>
+          <li><a routerLink="client/user-data" >Demander un devis</a></li>
+          <li><a routerLink="client/gallery" >Gallerie</a></li>
+          <li><a routerLink="client/about" >À propos</a></li>
+      </ul>
+      <div>
+          <button (click)="onSwitch()">Admin</button>
+      </div>
     </div>
-    <div *ngIf='isAdmin === true'>
-        <div>
-            <ul>
-                <li><a routerLink="quotes-manager" >Quotes manager</a></li>
-            </ul>
-        </div>
-        <div>
-            <button (click)="onSwitch()">Client</button>
-        </div>
+    <div class="page-links" *ngIf='isAdmin === true'>
+        <ul>
+          <li><a routerLink="quotes-manager" >Gestion des devis</a></li>
+        </ul>
+      <div>
+        <button (click)="onSwitch()">Client</button>
+      </div>
     </div>
 </nav>
 

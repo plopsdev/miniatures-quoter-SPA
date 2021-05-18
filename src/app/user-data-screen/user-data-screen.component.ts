@@ -24,8 +24,7 @@ export class UserDataScreenComponent implements OnInit {
 
     this.quoteService.quote.name = this.quote.name
     this.quoteService.quote.colorScheme = this.quote.colorScheme
-
-    this.router.navigate(['/ask-a-quote'])
+    this.router.navigate(['client/ask-a-quote'])
   }
 
 }

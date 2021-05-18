@@ -12,6 +12,10 @@ import { AskAQuoteComponent } from './ask-a-quote/ask-a-quote.component';
 import { ConfirmationScreenComponent } from './confirmation-screen/confirmation-screen.component';
 import { UserDataScreenComponent } from './user-data-screen/user-data-screen.component';
 import { QuoteService } from './services/quote.service';
+import { QuoteDetailsComponent } from './quote-details/quote-details.component';
+import { HomeComponent } from './static-pages/home/home.component';
+import { GalleryComponent } from './static-pages/gallery/gallery.component';
+import { AboutComponent } from './static-pages/about/about.component';
 // import { QuoteDetailsViewComponent } from './pages/admin/quote-details-view/quote-details-view.component';
 // import { QuotesManagerViewComponent } from './pages/admin/quotes-manager-view/quotes-manager-view.component';
 // import { AboutViewComponent } from './pages/client/about-view/about-view.component';
@@ -27,9 +31,14 @@ import { QuoteService } from './services/quote.service';
 
 const appRoutes: Routes = [
     { path: 'quotes-manager', component: QuotesManagerComponent },
-    { path: 'user-data', component: UserDataScreenComponent },
-    { path: 'ask-a-quote', component: AskAQuoteComponent },
-    { path: 'confirmation', component: ConfirmationScreenComponent }
+    { path: 'quotes-manager/:id', component: QuoteDetailsComponent },
+    { path: 'client', component: HomeComponent },
+    { path: 'client/user-data', component: UserDataScreenComponent },
+    { path: 'client/ask-a-quote', component: AskAQuoteComponent },
+    { path: 'client/confirmation', component: ConfirmationScreenComponent },
+    { path: 'client/about', component: AboutComponent },
+    { path: 'client/gallery', component: GalleryComponent }
+    
     // { path: 'admin/quote-details/:id', component: QuoteDetailsViewComponent },
 
     // { path: 'client', component: HomeViewComponent },
@@ -48,7 +57,11 @@ const appRoutes: Routes = [
     QuoteRowComponent,
     AskAQuoteComponent,
     ConfirmationScreenComponent,
-    UserDataScreenComponent
+    UserDataScreenComponent,
+    QuoteDetailsComponent,
+    HomeComponent,
+    GalleryComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

@@ -7,9 +7,9 @@ import { MiniaturesGroup, QuoteFull, RestService, User } from './rest.service';
 })
 export class QuoteService {
 
-  miniaturesGroups: MiniaturesGroup[]
+  miniaturesGroups: MiniaturesGroup[] = []
   user: User = {name: "", mail: ""}
-  quote: QuoteFull = {name: "", colorScheme: "", user: this.user, miniaturesGroups: []}
+  quote: QuoteFull = {name: "", colorScheme: "", user: this.user, miniaturesGroups: this.miniaturesGroups, state_id: 1}
   
 
   constructor(public rest: RestService, private route: ActivatedRoute, private router: Router) { }
@@ -19,9 +19,10 @@ export class QuoteService {
   }
 
   addQuote() {
+    console.log(this.quote)
     this.rest.addQuote(this.quote).subscribe(
       (result) => {
-        this.router.navigate(['/confirmation'])
+        this.router.navigate(['/client/confirmation'])
       }
     )
   }

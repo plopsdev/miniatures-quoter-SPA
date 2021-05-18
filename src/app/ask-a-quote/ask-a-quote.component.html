@@ -1,1 +1,41 @@
-<p>ask-a-quote works!</p>
+<h1>Complétez le formulaire pour réaliser le devis</h1>
+
+<ul>
+  <div *ngFor="let miniaturesGroup of miniaturesGroups">
+    <span>{{ miniaturesGroup.name }}</span>
+    <span>{{ miniaturesGroup.quantity }}</span>
+    <span>{{ miniaturesGroup.wantBuilt }}</span>
+    <span>{{ miniaturesGroup.brand }}</span>
+    <span>{{ miniaturesGroup.comment }}</span>
+    <span>{{ miniaturesGroup.scale_id }}</span>
+    <span>{{ miniaturesGroup.quality_id }}</span>
+  </div>
+</ul>   
+
+
+  
+<div>
+  <input type="text" [(ngModel)]="miniaturesGroupForm.name" placeholder="Nom de l'unité" >
+  <input type="number" [(ngModel)]="miniaturesGroupForm.quantity" placeholder="Quantité" >
+  <input type="checkbox" [(ngModel)]="miniaturesGroupForm.wantBuilt" > Montage
+  <input type="text" [(ngModel)]="miniaturesGroupForm.brand" placeholder="Marque" >
+  <input type="text" [(ngModel)]="miniaturesGroupForm.comment" placeholder="Commentaire" >
+
+  <select [(ngModel)]="miniaturesGroupForm.scale_id">
+    <option [ngValue]="1">Petit</option>
+    <option [ngValue]="2">Humanoïde</option>
+    <option [ngValue]="3">Cavalerie</option>
+    <option [ngValue]="4">Monstre</option>
+  </select>
+
+  <select [(ngModel)]="miniaturesGroupForm.quality_id">
+    <option [ngValue]="1">Basique</option>
+    <option [ngValue]="2">Avancé</option>
+    <option [ngValue]="3">Studio</option>
+  </select>
+
+  <button (click)="addEntry()" >Ajouter</button>
+</div>
+
+<button (click)="onSubmit()" >Confirmer</button>
+
