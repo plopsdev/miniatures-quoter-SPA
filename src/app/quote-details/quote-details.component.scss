@@ -1,10 +1,4 @@
-$pink: #FF7B9C;
-$dark_pink: #CC637D;
-$white: #FFFF;
-$font: #12424A;
-$off_white: #E8E9ED;
-
-$button_duration: 0.3s;
+@import "../../variables.scss";
 
 div.title-container{
   display:flex;
@@ -29,8 +23,8 @@ div.quotes-container {
     grid-template-columns: 15% 15% 10% 10% 10% 10% 20% 10%;
     margin-bottom: 48px;
   }
-  
 }
+
 div.contact-container{
   display: flex;
   flex-direction: row;

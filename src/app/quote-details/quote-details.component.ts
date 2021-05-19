@@ -26,7 +26,7 @@ export class QuoteDetailsComponent implements OnInit {
     let row = this.quote.miniaturesGroups.find(miniaturesGroup => miniaturesGroup.id === id)
 
     if (row.wantBuilt){
-      price = row.scale.buildPrice;
+      price += row.scale.buildPrice;
     }
 
     price += row.scale.paintPrice;

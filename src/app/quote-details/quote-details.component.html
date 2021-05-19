@@ -17,14 +17,17 @@
     <span class="column-title">Prix</span>
   </div>
   <div class="grid-content" *ngFor="let miniaturesGroup of quote.miniaturesGroups">
-    <span class="column-content">{{ miniaturesGroup?.name }}</span>
-    <span class="column-content">{{ miniaturesGroup?.brand }}</span>
-    <span class="column-content">{{ miniaturesGroup?.quantity }}</span>
-    <span class="column-content">{{ miniaturesGroup?.scale.name }}</span>
-    <span class="column-content">{{ miniaturesGroup?.quality.name }}</span>
-    <span class="column-content">{{ miniaturesGroup?.wantBuilt }}</span>
-    <span class="column-content">{{ miniaturesGroup?.comment }}</span>
-    <span class="column-content">{{ getRowPrice(miniaturesGroup.id) }} €</span>
+    <span>{{ miniaturesGroup?.name }}</span>
+    <span>{{ miniaturesGroup?.brand }}</span>
+    <span>{{ miniaturesGroup?.quantity }}</span>
+    <span>{{ miniaturesGroup?.scale.name }}</span>
+    <span>{{ miniaturesGroup?.quality.name }}</span>
+
+    <span *ngIf="miniaturesGroup.wantBuilt == false" >Non</span>
+    <span *ngIf="miniaturesGroup.wantBuilt == true" >Oui</span>
+    
+    <span>{{ miniaturesGroup?.comment }}</span>
+    <span>{{ getRowPrice(miniaturesGroup.id) }} €</span>
   </div>
 </div>
 

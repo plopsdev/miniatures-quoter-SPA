@@ -38,22 +38,13 @@ export interface MiniaturesGroup {
   brand: string;
   comment: string;
   scale_id: number;
-  quality_id: number
+  quality_id: number;
 }
 
 export interface MiniaturesGroupsDetails {
   id: number;
-  scale: {
-    id: number;
-    name: string;
-    paintPrice: number;
-    buildPrice: number;
-  },
-  quality: {
-    id: number;
-    name: string;
-    priceMultiplier: number;
-  },
+  scale: Scale
+  quality: Quality
   quantity: number;
   wantBuilt: boolean;
   brand: string;
@@ -76,6 +67,19 @@ export interface QuoteDetails {
     id: number;
     name: string;
   }
+}
+
+export interface Scale {
+  id: number;
+  name: string;
+  paintPrice: number;
+  buildPrice: number;
+}
+
+export interface Quality {
+  id: number;
+  name: string;
+  priceMultiplier: number;
 }
 
 
@@ -105,5 +109,13 @@ export class RestService {
 
   deleteQuote(id): Observable<any> {
     return this.http.delete<Quote>(endpoint + '/' + id)
+  }
+
+  getScales(): Observable<any> {
+    return this.http.get('http://127.0.0.1:8000/api/scales')
+  }
+
+  getQualities(): Observable<any> {
+    return this.http.get('http://127.0.0.1:8000/api/qualities')
   }
 }

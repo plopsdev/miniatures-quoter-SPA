@@ -1,0 +1,41 @@
+@import "../../variables.scss";
+
+div.container{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  div.form{
+    h2{
+      margin-top: 24px;
+      margin-bottom: 18px;
+    }
+    input, textarea{
+      border: none;
+      background-color: $off_white;
+      width: 300px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      padding-left:8px;
+      border-radius: 4px;
+      resize: none;
+      &.color-scheme{
+        height: 80px;
+      }
+      &:focus{
+        outline:none;
+      }
+    }
+  }
+}
+button{
+  border:none;
+  background-color: $white;
+  cursor: pointer;
+  padding: 8px;
+  color: $medium_blue;
+  transition-duration: $button_duration;
+  &:hover{
+    color: $dark_blue;
+  }
+}

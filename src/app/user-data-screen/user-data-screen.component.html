@@ -1,8 +1,13 @@
-<div>
-  <input type="text" [(ngModel)]="user.name" placeholder="Name" ><br>
-  <input type="text" [(ngModel)]="user.mail" placeholder="Mail" ><br>
-  <input type="text" [(ngModel)]="quote.name" placeholder="quote name" ><br>
-  <input type="text" [(ngModel)]="quote.colorScheme" placeholder="colorScheme" ><br>
-
+<div class= "container">
+  <div class="form">
+    <h2>Votre nom et prénom ?</h2>
+    <input type="text" [(ngModel)]="user.name" placeholder="Jean-Pierre Peinture ..." ><br>
+    <h2>Votre adresse e-mail ?</h2>
+    <input type="text" [(ngModel)]="user.mail" placeholder="jean-pierre@peinture.com ..." ><br>
+    <h2>Le nom de votre projet ?</h2>
+    <input type="text" [(ngModel)]="quote.name" placeholder="Ma super armée ..." ><br>
+    <h2>Des instructions pour le schéma de couleur ?</h2>
+    <textarea class="color-scheme" type="text" [(ngModel)]="quote.colorScheme" placeholder="Très coloré ..." ></textarea>
+  </div>
   <button (click)="onSubmit()" >Suivant</button>
 </div>

@@ -1,12 +1,9 @@
-$pink: #FF7B9C;
-$dark_pink: #CC637D;
-$white: #FFFF;
-$font: #12424A;
-$off_white: #E8E9ED;
-$dark_offwhite: #CFCFD1;
-$medium_blue: #607196;
+@import "../variables.scss";
 
-$button_duration: 0.3s;
+div.container{
+  margin-left: 15%;
+  margin-right: 15%;
+}
 
 
 a{
@@ -18,6 +15,7 @@ nav{
     margin-bottom: 120px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     ul{
       display:flex; 
       list-style-type: none;

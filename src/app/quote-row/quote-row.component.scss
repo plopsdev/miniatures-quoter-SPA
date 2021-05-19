@@ -1,10 +1,4 @@
-$pink: #FF7B9C;
-$dark_pink: #CC637D;
-$white: #FFFF;
-$font: #12424A;
-$off_white: #E8E9ED;
-
-$button_duration: 0.3s;
+@import "../../variables.scss";
 
 .container{
   cursor: pointer;

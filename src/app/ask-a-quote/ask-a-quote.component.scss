@@ -1,0 +1,71 @@
+@import "../../variables.scss";
+
+
+div.container{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  div.quotes-container {
+    div.grid-titles{
+      display:grid;
+      grid-template-columns: 15% 15% 10% 10% 10% 10% 20% 10%;
+      margin-bottom: 54px;
+      span.column-title{
+        font-weight: bold;
+      }
+    }
+    .grid-content{
+      display:grid;
+      grid-template-columns: 15% 15% 10% 10% 10% 10% 20% 10%;
+      margin-bottom: 48px;
+    }
+    .grid-form{
+      display:grid;
+      grid-template-columns: 15% 15% 10% 10% 10% 10% 20% 10%;
+      input, select{
+        border: none;
+        background-color: $off_white;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left:8px;
+        border-radius: 4px;
+        margin-right: 12px;
+        &:focus{
+          outline:none;
+        }
+      }
+      button{
+        border-radius: 6px;
+        width: 100px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        transition-duration: $button_duration;
+        cursor: pointer;
+        &.dark-button{
+          background-color: $pink;
+          border: 2px solid $pink;
+          margin-right: 16px;
+          color: $white;
+          &:hover{
+            background-color: $dark_pink;
+            border: 2px solid $dark_pink;
+          }
+        }
+      }
+    }
+  }
+  button.submit{
+    margin-top: 200px;
+    margin-right:16px;
+    align-self: flex-end;
+    border:none;
+    background-color: $white;
+    cursor: pointer;
+    padding: 8px;
+    color: $medium_blue;
+    transition-duration: $button_duration;
+    &:hover{
+      color: $dark_blue;
+    }
+  }
+}

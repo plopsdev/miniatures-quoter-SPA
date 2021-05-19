@@ -1,6 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-
+$font: #12424A;
 *{
   font-size: 100%;
   font-family: raleway;
+  color: $font;
+}
+
+h1{
+  font-size:xx-large;
+  margin-bottom: 64px;
+}
+h2{
+  font-size: large;
 }

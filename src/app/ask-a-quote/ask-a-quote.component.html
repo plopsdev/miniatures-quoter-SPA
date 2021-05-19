@@ -1,41 +1,76 @@
 <h1>Complétez le formulaire pour réaliser le devis</h1>
-
-<ul>
-  <div *ngFor="let miniaturesGroup of miniaturesGroups">
-    <span>{{ miniaturesGroup.name }}</span>
-    <span>{{ miniaturesGroup.quantity }}</span>
-    <span>{{ miniaturesGroup.wantBuilt }}</span>
-    <span>{{ miniaturesGroup.brand }}</span>
-    <span>{{ miniaturesGroup.comment }}</span>
-    <span>{{ miniaturesGroup.scale_id }}</span>
-    <span>{{ miniaturesGroup.quality_id }}</span>
+<div class="container">
+  <div class="quotes-container">
+    <div class="grid-titles">
+      <span class="column-title">Nom</span>
+      <span class="column-title">Marque</span>
+      <span class="column-title">Nombre</span>
+      <span class="column-title">Échelle</span>
+      <span class="column-title">Qualité</span>
+      <span class="column-title">Montage</span>
+      <span class="column-title">Commentaire</span>
+      <span class="column-title">Prix</span>
+    </div>
+  
+    <div class="grid-content" *ngFor="let  miniaturesGroup of miniaturesGroups; index as i ">
+      <span>{{ miniaturesGroup.name }}</span>
+      <span>{{ miniaturesGroup.brand }}</span>
+      <span>{{ miniaturesGroup.quantity }}</span>
+  
+      <span *ngIf="miniaturesGroup.scale_id == 1">Petit</span>
+      <span *ngIf="miniaturesGroup.scale_id == 2">Humanoïde</span>
+      <span *ngIf="miniaturesGroup.scale_id == 3">Cavalerie</span>
+      <span *ngIf="miniaturesGroup.scale_id == 4">Monstre</span>
+  
+      <span *ngIf="miniaturesGroup.quality_id == 1">Basique</span>
+      <span *ngIf="miniaturesGroup.quality_id == 2">Avancé</span>
+      <span *ngIf="miniaturesGroup.quality_id == 3">Studio</span>
+  
+      <span *ngIf="miniaturesGroup.wantBuilt == false">Non</span>
+      <span *ngIf="miniaturesGroup.wantBuilt == true">Oui</span>
+      
+      <span>{{ miniaturesGroup.comment }}</span>
+      <span>{{ prices[i] }} €</span>
+    </div>
+  
+    <div class="grid-form">
+      <input type="text" [(ngModel)]="miniaturesGroupForm.name" placeholder="Nom de l'unité" >
+      <input type="text" [(ngModel)]="miniaturesGroupForm.brand" placeholder="Marque" >
+      <input type="number" [(ngModel)]="miniaturesGroupForm.quantity" placeholder="Quantité" >
+    
+      <select [(ngModel)]="miniaturesGroupForm.scale_id">
+        <option [ngValue]="1">Petit</option>
+        <option [ngValue]="2">Humanoïde</option>
+        <option [ngValue]="3">Cavalerie</option>
+        <option [ngValue]="4">Monstre</option>
+      </select>
+    
+      <select [(ngModel)]="miniaturesGroupForm.quality_id">
+        <option [ngValue]="1">Basique</option>
+        <option [ngValue]="2">Avancé</option>
+        <option [ngValue]="3">Studio</option>
+      </select>
+    
+      <select [(ngModel)]="miniaturesGroupForm.wantBuilt">
+        <option [ngValue]="false">Non</option>
+        <option [ngValue]="true">Oui</option>
+      </select>
+      
+      <input type="text" [(ngModel)]="miniaturesGroupForm.comment" placeholder="Commentaire" >
+    
+      <button class="dark-button" (click)="addEntry()" >Ajouter</button>
+    </div>
   </div>
-</ul>   
+  <button class="submit" (click)="onSubmit()" >Confirmer</button>
+</div>
 
 
   
-<div>
-  <input type="text" [(ngModel)]="miniaturesGroupForm.name" placeholder="Nom de l'unité" >
-  <input type="number" [(ngModel)]="miniaturesGroupForm.quantity" placeholder="Quantité" >
-  <input type="checkbox" [(ngModel)]="miniaturesGroupForm.wantBuilt" > Montage
-  <input type="text" [(ngModel)]="miniaturesGroupForm.brand" placeholder="Marque" >
-  <input type="text" [(ngModel)]="miniaturesGroupForm.comment" placeholder="Commentaire" >
+ 
 
-  <select [(ngModel)]="miniaturesGroupForm.scale_id">
-    <option [ngValue]="1">Petit</option>
-    <option [ngValue]="2">Humanoïde</option>
-    <option [ngValue]="3">Cavalerie</option>
-    <option [ngValue]="4">Monstre</option>
-  </select>
 
-  <select [(ngModel)]="miniaturesGroupForm.quality_id">
-    <option [ngValue]="1">Basique</option>
-    <option [ngValue]="2">Avancé</option>
-    <option [ngValue]="3">Studio</option>
-  </select>
+  
 
-  <button (click)="addEntry()" >Ajouter</button>
-</div>
 
-<button (click)="onSubmit()" >Confirmer</button>
+
 
